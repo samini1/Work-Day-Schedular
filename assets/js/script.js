@@ -3,6 +3,7 @@ var blockEl = $("#block-container");
 const now = moment().format("dddd, MMMM Do");
 const currentHour = moment().format("H");
 const hours = ['9', '10','11','12','1','2','3','4','5'];
+const worldTime = ['9','10','11','12','13','14','15','16','17'];
 const period = ['AM','AM','AM','PM','PM','PM','PM','PM','PM'];
 
 
@@ -15,11 +16,11 @@ $.each(hours, function(i, val) {
     var blockHourSlot = $(
     '<div class = "hour">txt</div>'
     );
-    if (currentHour > hours[i]) {
+    if (currentHour > worldTime[i]) {
     var blockElEntry=  $(
         '<div class = "past row">Enter event</div>'
     );
-    } else if (currentHour === hours[i])
+    } else if (currentHour === worldTime[i])
     {  var blockElEntry=  $(
         '<div class = "present row">Enter event</div>'
     );
