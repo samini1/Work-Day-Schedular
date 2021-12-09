@@ -2,7 +2,7 @@ var currentDay = $("#currentDay");
 var blockEl = $("#block-container");
 const now = moment().format("dddd, MMMM Do");
 const currentHour = moment().format("H");
-const hours = ['9', '10','11','12','1','2','3','4','5'];
+const hours = ['9','10','11','12','1','2','3','4','5'];
 const worldTime = ['9','10','11','12','13','14','15','16','17'];
 const period = ['AM','AM','AM','PM','PM','PM','PM','PM','PM'];
 
@@ -16,22 +16,24 @@ $.each(hours, function(i, val) {
     var blockHourSlot = $(
     '<div class = "hour">txt</div>'
     );
+    
+    // console.log(worldTime[i]);
     if (currentHour > worldTime[i]) {
     var blockElEntry=  $(
-        '<div class = "past row">Enter event</div>'
+        '<div id = "time-block" class = "past row ">Enter event</div>'
     );
     } else if (currentHour === worldTime[i])
     {  var blockElEntry=  $(
-        '<div class = "present row">Enter event</div>'
+        '<div id = "time-block" class = "present row ">Enter event</div>'
     );
     } else {
-        var blockElEntry = $('<div class = "future row">Enter event</div>'
+        var blockElEntry = $('<div id = "time-block" class = "future row">Enter event</div>'
 
         )
     }
     
     var saveButton = $(
-        '<button class ="saveBtn">Save</button>'
+        '<button class ="saveBtn"><i>Save</i></button>'
     );    
     blockHourSlot.text(val + period[i]);
     blockEl.append(blockHourSlot);
@@ -46,11 +48,15 @@ $.each(hours, function(i, val) {
 
 //click into time block and enter an event
 
+function editEntry(){
+    console.log('clicked entry')
+}
+
+$("#time-block").click(editEntry);
+
 //save button for time block saves text in local storage
-// blockElSlot.append(
-    
-    
-// )
+function saveEntry() {
+    console.log("clicked save");
+}
 
-
-// blockEl.append(blockElSlot);
+$(".saveBtn").click(saveEntry);
