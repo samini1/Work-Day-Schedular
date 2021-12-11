@@ -17,6 +17,7 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  width: 100%;
 }
 
 .jumbotron {
@@ -32,8 +33,9 @@ textarea {
 }
 
 .time-block {
-  text-align: center;
-  border-radius: 15px;
+  margin: 0%;
+  border-left:1px solid #000000  ;
+ 
 }
 
 .row {
@@ -42,10 +44,12 @@ textarea {
   border-top: 1px solid white;
 }
 
-.hour {
+.hour { 
+  border-radius: 15px 0 0 0;  
   background-color: #ffffff;
+  text-align: center;
   color: #000000;
-  border-top: 1px dashed #000000;
+  border-top: 1px dashed #000000; 
 }
 
 .past {
@@ -103,3 +107,11 @@ textarea {
   grid-template-rows:repeat(9, 1fr);
   grid-auto-flow: column;
 }
+
+.time-block p {
+  background: transparent;
+  color: #000000;  
+  padding: 10px;
+  width: 100%;
+}
+
